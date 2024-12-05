@@ -4,9 +4,9 @@ import { DetailItemComponent } from "./detail-item.component";
 import { ROOM_LIST } from "./habitationList.constant";
 
 export const HotelInfo = () => (
-  <section className="grid gap-8 px-[5%] py-[5dvh] text-left">
+  <section className="grid w-full gap-8 px-[5%] py-[5dvh] text-left">
     <div className="grid gap-4">
-      <h2 className="text-center text-2xl md:text-3xl">Datos del hotel</h2>
+      <h2 className="text-center-xl">Datos del hotel</h2>
       <p className="text-justify">
         Los precios de las habitaciones se congelan depositando el 15% del valor
         de la habitación elegida (300 US aprox)

@@ -13,3 +13,13 @@ body {
   background: var(--secondary);
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+@layer utilities {
+  .text-center-xl {
+    @apply text-center text-2xl md:text-3xl;
+  }
+
+  .common-section {
+    @apply w-full px-[5%] py-[5dvh];
+  }
+}
