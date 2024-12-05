@@ -7,6 +7,7 @@ import "./globals.css";
 const curlyFont = Oooh_Baby({
   weight: "400",
   variable: "--font-curly",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${curlyFont.variable} antialiased bg-tertiary flex flex-col items-center`}
+        className={`${curlyFont.variable} flex flex-col items-center bg-tertiary antialiased`}
       >
         {children}
       </body>
