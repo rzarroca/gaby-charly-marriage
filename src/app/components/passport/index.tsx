@@ -1,9 +1,9 @@
 // Vendors
 import Image from "next/image";
 // Assets
-import gycStampUrl from "../../../assets/vectors/gyc-stamp.svg?url";
-import heartLoopUrl from "../../../assets/vectors/heart-loop.svg?url";
-import compassUrl from "../../../assets/vectors/compass.svg?url";
+import gycStampUrl from "assets/vectors/gyc-stamp.svg?url";
+import heartLoopUrl from "assets/vectors/heart-loop.svg?url";
+import compassUrl from "assets/vectors/compass.svg?url";
 
 export const Passport = () => (
   <header className="h-dvh relative" aria-describedby="presentation">
