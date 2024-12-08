@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function Timer() {
+export function Timer() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,

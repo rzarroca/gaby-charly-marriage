@@ -1,6 +1,19 @@
+// Vendors
+import Image from "next/image";
+// Assets
+import travelHands from "assets/travel-hands.png";
+// Components
+import { CommonTitle } from "components/commonTitle";
+
 export const Confirmation = () => (
   <form action="" className="common-section grid gap-4 text-left">
-    <h2 className="text-center-xl">Confirma tu presencia!</h2>
+    <Image
+      src={travelHands}
+      alt=""
+      role="presentation"
+      className="mx-auto w-1/2 md:w-1/3"
+    />
+    <CommonTitle>Confirma tu presencia!</CommonTitle>
 
     <fieldset className="grid gap-2">
       <label htmlFor="asistants">Cuantos son?</label>

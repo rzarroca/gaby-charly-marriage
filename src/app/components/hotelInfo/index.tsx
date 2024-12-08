@@ -1,15 +1,16 @@
 // Components
 import { DetailItemComponent } from "./detail-item.component";
+import { CommonTitle } from "components/commonTitle";
 // Constants
 import { ROOM_LIST } from "./habitationList.constant";
 
 export const HotelInfo = () => (
   <section className="grid w-full gap-8 px-[5%] py-[5dvh] text-left">
     <div className="grid gap-4">
-      <h2 className="text-center-xl">Datos del hotel</h2>
+      <CommonTitle>Datos del hotel</CommonTitle>
       <p className="text-justify">
         Los precios de las habitaciones se congelan depositando el 15% del valor
-        de la habitación elegida (300 US aprox)
+        de la habitación elegida (300 US aprox).
       </p>
       <p className="text-justify">
         Contamos con una membresía por lo que todos disfrutaremos de los
@@ -20,7 +21,7 @@ export const HotelInfo = () => (
 
     <div className="grid gap-2">
       <h3 className="text-xl md:text-2xl">Precios (7 noches, 8 días)</h3>
-      <ul className="grid gap-2">
+      <ul className="grid gap-3">
         {ROOM_LIST.map((roomProps, index) => (
           <DetailItemComponent key={index} {...roomProps} />
         ))}

@@ -5,14 +5,8 @@ import heartUrl from "assets/vectors/heart.svg?url";
 import horLoopUrl from "assets/vectors/horizontal-loop.svg?url";
 
 export const Invitation = () => (
-  <section
-    className="h-dvh py-[10dvh] relative grid justify-items-center"
-    aria-describedby="history"
-  >
-    <p
-      id="history"
-      className="flex flex-col font-curly text-5xl leading-snug px-[10dvw]"
-    >
+  <section className="relative grid h-dvh justify-items-center py-[10dvh]">
+    <p className="flex flex-col px-[10dvw] font-curly text-5xl leading-snug">
       <span>Después de</span>
       <span>13 años juntos</span>
       <span>(y dos hijos)</span>
@@ -21,7 +15,7 @@ export const Invitation = () => (
       <Image src={horLoopUrl} alt="" role="presentation" />
       <span className="px-[10dvw]">decidimos dar el SI</span>
     </p>
-    <p className="text-3xl md:text-4xl font-curly leading-snug px-[10dvw]">
+    <p className="px-[10dvw] font-curly text-3xl leading-snug md:text-4xl">
       así que prepara tus maletas, el pasaporte
       <br />y acompáñanos en esta aventura !
     </p>
@@ -30,7 +24,7 @@ export const Invitation = () => (
       src={heartUrl}
       alt=""
       role="presentation"
-      className="w-12 h-12 sm:w-20 sm:h-20 absolute bottom-[5dvh] left-[10dvw]"
+      className="absolute bottom-[5dvh] left-[10dvw] h-12 w-12 sm:h-20 sm:w-20"
     />
   </section>
 );
