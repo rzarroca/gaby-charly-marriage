@@ -5,7 +5,7 @@ import cygPhoto from "assets/photogyc.jpeg";
 import stamp from "assets/mexico-stamp.png";
 
 export const WeddingInfo = () => (
-  <section className="grid w-[95%] place-self-center rounded-lg border-8 border-double border-secondary bg-tertiary">
+  <section className="mx-auto grid w-[95%] rounded-lg border-8 border-double border-secondary bg-tertiary">
     <Image src={cygPhoto} alt="Gabriela y Carlos esperándolos en México" />
     <h2 className="mx-auto w-[95%] border-b-2 border-b-secondary py-[2dvh] text-2xl uppercase md:text-3xl">
       Pasaporte a nuestra boda

@@ -1,3 +1,5 @@
+// Vendors
+import { Toaster } from "react-hot-toast";
 // Components
 import { Confirmation } from "./components/confirmation";
 import { Countdown } from "./components/countdown";
@@ -11,7 +13,7 @@ import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
-    <main className="grid max-w-3xl bg-secondary text-center shadow-xl">
+    <main className="w-dvw max-w-3xl overflow-clip bg-secondary text-center shadow-xl">
       <Header />
       <Invitation />
       <WeddingInfo />
@@ -21,6 +23,7 @@ export default function Home() {
       <Countdown />
       <DressCode />
       <Footer />
+      <Toaster />
     </main>
   );
 }

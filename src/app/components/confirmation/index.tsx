@@ -1,44 +1,93 @@
+"use client";
 // Vendors
+import Form from "next/form";
 import Image from "next/image";
+import toast from "react-hot-toast";
+import { useActionState, useEffect } from "react";
+// Actions
+import { SendEmailAction } from "./actions";
 // Assets
 import travelHands from "assets/travel-hands.png";
 // Components
 import { CommonTitle } from "components/commonTitle";
+import { SubmitButton } from "./submitButton";
 
-export const Confirmation = () => (
-  <form action="" className="common-section grid gap-4 text-left">
-    <Image
-      src={travelHands}
-      alt=""
-      role="presentation"
-      className="mx-auto w-1/2 md:w-1/3"
-    />
-    <CommonTitle>Confirma tu presencia!</CommonTitle>
+export const Confirmation = () => {
+  const [state, formAction] = useActionState(SendEmailAction, "");
 
-    <fieldset className="grid gap-2">
-      <label htmlFor="asistants">Cuantos son?</label>
-      <input
-        type="number"
-        name="asistants"
-        id="asistants"
-        min="0"
-        max="10"
-        step="1"
-        className="rounded-sm px-2 py-1 text-secondary"
+  useEffect(() => {
+    if (state === "success") {
+      toast.success("Asistencia Confirmada!");
+    } else if (state === "error") {
+      toast.error("Ha habido un error. Inténtalo otra vez");
+    }
+  }, [state]);
+
+  return (
+    <Form action={formAction} className="common-section grid gap-4 text-left">
+      <Image
+        src={travelHands}
+        alt=""
+        role="presentation"
+        className="mx-auto w-1/2 md:w-1/3"
       />
+      <CommonTitle>Confirma tu presencia!</CommonTitle>
 
-      <label htmlFor="name">Quienes? *</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        required
-        className="rounded-sm px-2 py-1 text-secondary"
-      />
-    </fieldset>
+      <fieldset className="grid gap-2">
+        <label htmlFor="adults">Cantidad de adultos:</label>
+        <input
+          className="rounded-sm px-2 py-1 text-secondary"
+          defaultValue="1"
+          id="adults"
+          max="10"
+          min="1"
+          name="adults"
+          required
+          step="1"
+          type="number"
+        />
 
-    <button className="rounded-sm border-2 border-primary px-2 py-1 text-lg md:text-xl">
-      Enviar
-    </button>
-  </form>
-);
+        <label htmlFor="childrens">Cantidad de niños:</label>
+        <input
+          className="rounded-sm px-2 py-1 text-secondary"
+          defaultValue="0"
+          id="childrens"
+          max="10"
+          min="0"
+          name="childrens"
+          required
+          step="1"
+          type="number"
+        />
+
+        <label htmlFor="names">Nombres:</label>
+        <input
+          className="rounded-sm px-2 py-1 text-secondary"
+          id="names"
+          name="names"
+          required
+          type="text"
+          maxLength={255}
+        />
+
+        <label htmlFor="message">Si quieres, deja un mensaje:</label>
+        <textarea
+          className="rounded-sm px-2 py-1 text-secondary"
+          id="message"
+          name="message"
+          maxLength={1000}
+        />
+      </fieldset>
+
+      <SubmitButton />
+
+      {state && (
+        <p>
+          {state === "error"
+            ? "Ha habido un error. Inténtalo otra vez"
+            : "Asistencia Confirmada!"}
+        </p>
+      )}
+    </Form>
+  );
+};

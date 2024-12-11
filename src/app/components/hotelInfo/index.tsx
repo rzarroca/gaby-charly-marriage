@@ -1,11 +1,22 @@
+// Vendors
+import Image from "next/image";
+// Assets
+import hotel from "assets/vectors/hotel.svg?url";
 // Components
-import { DetailItemComponent } from "./detail-item.component";
 import { CommonTitle } from "components/commonTitle";
+import { DetailItemComponent } from "./detail-item.component";
+import { PageSection } from "components/pageSection";
 // Constants
 import { ROOM_LIST } from "./habitationList.constant";
 
 export const HotelInfo = () => (
-  <section className="grid w-full gap-8 px-[5%] py-[5dvh] text-left">
+  <PageSection className="text-left">
+    <Image
+      src={hotel}
+      alt=""
+      role="presentation"
+      className="mx-auto w-1/2 md:w-1/3"
+    />
     <div className="grid gap-4">
       <CommonTitle>Datos del hotel</CommonTitle>
       <p className="text-justify">
@@ -32,5 +43,5 @@ export const HotelInfo = () => (
       Los aéreos los sacaremos en cuanto se habilite la fecha de noviembre,
       estén atentos por que les avisare a un grupo de WhatsApp que voy a crear.
     </small>
-  </section>
+  </PageSection>
 );
