@@ -28,8 +28,7 @@ export const HotelInfo = () => (
       </Paragraph>
       <Paragraph className="text-justify">
         Contamos con una membresía por lo que todos disfrutaremos de los
-        beneficios de tener pulsera BLACK{" "}
-        <span aria-label="guiño de ojo">😜</span>
+        beneficios de tener pulsera BLACK.
       </Paragraph>
     </div>
 

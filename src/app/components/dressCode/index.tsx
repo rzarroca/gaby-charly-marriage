@@ -8,9 +8,11 @@ import hat from "assets/vectors/hat.svg?url";
 import { PageSection } from "components/pageSection";
 import { CommonTitle } from "components/commonTitle";
 import { ItalicParagraph } from "components/italicParagraph";
+import { WorldImage } from "components/worldImage";
 
 export const DressCode = () => (
   <PageSection className="relative">
+    <WorldImage />
     <CommonTitle>Código de vestimenta para la boda</CommonTitle>
     <ItalicParagraph>Elegante playero</ItalicParagraph>
     <ItalicParagraph>Colores pasteles</ItalicParagraph>

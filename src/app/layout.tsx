@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${curlyFont.variable} grid justify-center bg-white antialiased`}
+        className={`${curlyFont.variable} grid justify-center bg-secondary antialiased`}
       >
         {children}
       </body>

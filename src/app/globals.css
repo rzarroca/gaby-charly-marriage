@@ -11,6 +11,5 @@
 
 body {
   color: var(--primary);
-  background: var(--secondary);
   font-family: Georgia, "Times New Roman", Times, serif;
 }

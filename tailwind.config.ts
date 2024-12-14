@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        cross: "cross 30s linear infinite",
+        "spin-slow": "spin 90s linear infinite",
+        "spin-slow-r": "spin-reverse 90s linear infinite",
+      },
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
@@ -17,13 +22,14 @@ export default {
       fontFamily: {
         curly: ["var(--font-curly)"],
       },
-      animation: {
-        cross: "cross 20s linear infinite",
-      },
       keyframes: {
         cross: {
           "0%": { transform: "translate(0)" },
           "100%": { transform: "translate(-375px)" },
+        },
+        "spin-reverse": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
         },
       },
     },

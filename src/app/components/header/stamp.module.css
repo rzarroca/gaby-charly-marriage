@@ -1,0 +1,9 @@
+.stack {
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.stackItem {
+  grid-area: stack;
+  place-self: center;
+}

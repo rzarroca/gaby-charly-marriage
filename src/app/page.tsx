@@ -13,7 +13,7 @@ import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
-    <main className="w-dvw max-w-3xl overflow-clip bg-secondary text-center shadow-xl">
+    <main className="w-dvw max-w-3xl overflow-clip bg-secondary text-center">
       <Header />
       <Invitation />
       <WeddingInfo />
