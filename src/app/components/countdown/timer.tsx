@@ -33,7 +33,7 @@ export function Timer() {
   }, []);
 
   return (
-    <div className="mx-auto grid w-full max-w-xl grid-cols-4 gap-1">
+    <div className="mx-auto grid w-full max-w-xl grid-cols-4 gap-1 text-tertiary">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div key={unit} className="rounded-lg bg-white bg-opacity-10 p-2">
           <div className="text-3xl font-bold">{value}</div>

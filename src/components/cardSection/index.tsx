@@ -13,7 +13,7 @@ export const CardSection = ({
   <section
     style={{ backgroundImage: `url(${wave.src})` }}
     className={cn(
-      "mx-auto grid w-[95%] rounded-lg border-8 border-double border-secondary bg-tertiary",
+      "mx-auto grid w-[95%] rounded-lg border-8 border-double border-secondary bg-white",
       className,
     )}
     {...props}

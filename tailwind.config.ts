@@ -12,6 +12,7 @@ export default {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",
+        white: "var(--white)",
       },
       fontFamily: {
         curly: ["var(--font-curly)"],

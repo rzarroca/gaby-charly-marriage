@@ -13,7 +13,7 @@ export const WeddingInfo = () => (
       alt="Gabriela y Carlos esperándolos en México"
       className="shadow-lg"
     />
-    <h2 className="mx-auto w-[95%] border-b-2 border-b-secondary py-[2dvh] text-xl md:text-3xl">
+    <h2 className="] mx-auto w-[95%] border-b-2 border-b-secondary py-[2dvh] text-xl text-tertiary md:text-3xl">
       Pasaporte a nuestra boda
     </h2>
     <dl className="relative mx-auto w-[95%] border-b-2 border-b-secondary px-2 py-[2dvh] text-start">
@@ -38,6 +38,8 @@ export const WeddingInfo = () => (
         Mucha buena onda y ganas de festejar
       </dd>
     </dl>
-    <p className="px-6 py-[2dvh] text-xl md:text-3xl">Carlos & Gabriela</p>
+    <p className="px-6 py-[2dvh] text-xl text-tertiary md:text-3xl">
+      Carlos & Gabriela
+    </p>
   </CardSection>
 );
