@@ -8,7 +8,7 @@ export const SubmitButton = () => {
   return (
     <button
       type="submit"
-      className="rounded-sm border-2 border-primary px-2 py-1 text-lg md:text-xl"
+      className="rounded-sm border-2 border-primary px-2 py-1 text-lg italic md:text-xl"
       disabled={pending}
       aria-disabled={pending}
     >

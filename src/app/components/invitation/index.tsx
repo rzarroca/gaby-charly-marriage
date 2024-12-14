@@ -7,7 +7,7 @@ import horLoopUrl from "assets/vectors/horizontal-loop.svg?url";
 import { WorldImage } from "components/worldImage";
 
 export const Invitation = () => (
-  <section className="relative grid h-dvh justify-items-center py-[10dvh]">
+  <section className="relative grid h-dvh justify-items-center py-[3dvh]">
     <WorldImage />
     <p className="flex flex-col px-[10dvw] font-curly text-5xl leading-snug">
       <span>Después de</span>
@@ -18,7 +18,7 @@ export const Invitation = () => (
       <Image src={horLoopUrl} alt="" role="presentation" />
       <span className="px-[10dvw]">decidimos dar el SI</span>
     </p>
-    <p className="px-[10dvw] font-curly text-3xl leading-snug md:text-4xl">
+    <p className="px-[10dvw] font-curly text-2xl leading-snug md:text-3xl">
       así que prepara tus maletas, el pasaporte
       <br />y acompáñanos en esta aventura !
     </p>

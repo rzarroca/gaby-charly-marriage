@@ -6,6 +6,7 @@ import hotel from "assets/vectors/hotel.svg?url";
 import { CommonTitle } from "components/commonTitle";
 import { DetailItemComponent } from "./detail-item.component";
 import { PageSection } from "components/pageSection";
+import { Paragraph } from "components/paragraph";
 import { WorldImage } from "components/worldImage";
 // Constants
 import { ROOM_LIST } from "./habitationList.constant";
@@ -21,29 +22,37 @@ export const HotelInfo = () => (
     />
     <div className="grid gap-4">
       <CommonTitle>Datos del hotel</CommonTitle>
-      <p className="text-justify">
+      <Paragraph className="text-justify">
         Los precios de las habitaciones se congelan depositando el 15% del valor
         de la habitación elegida (300 US aprox).
-      </p>
-      <p className="text-justify">
+      </Paragraph>
+      <Paragraph className="text-justify">
         Contamos con una membresía por lo que todos disfrutaremos de los
         beneficios de tener pulsera BLACK{" "}
         <span aria-label="guiño de ojo">😜</span>
-      </p>
+      </Paragraph>
     </div>
 
-    <div className="grid gap-2">
-      <h3 className="text-xl md:text-2xl">Precios (7 noches, 8 días)</h3>
-      <ul className="grid gap-3">
+    <div className="grid gap-4">
+      <h3 className="text-center text-xl italic md:text-2xl">
+        Precios Habitaciones <br /> (7 noches, 8 días):
+      </h3>
+
+      <ul className="grid gap-3 italic md:grid-cols-2">
         {ROOM_LIST.map((roomProps, index) => (
-          <DetailItemComponent key={index} {...roomProps} />
+          <DetailItemComponent key={index} {...{ ...roomProps, index }} />
         ))}
       </ul>
-    </div>
 
-    <small className="text-justify text-sm">
-      Los aéreos los sacaremos en cuanto se habilite la fecha de noviembre,
-      estén atentos por que les avisare a un grupo de WhatsApp que voy a crear.
-    </small>
+      <small className="text-justify text-sm italic">
+        Texto para el precio all inclusive (rellenar)
+      </small>
+
+      <small className="text-justify text-sm italic">
+        Los aéreos los sacaremos en cuanto se habilite la fecha de noviembre,
+        estén atentos por que se avisará en un grupo de WhatsApp que se va a
+        crear.
+      </small>
+    </div>
   </PageSection>
 );

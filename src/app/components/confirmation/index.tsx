@@ -24,16 +24,19 @@ export const Confirmation = () => {
   }, [state]);
 
   return (
-    <Form action={formAction} className="common-section grid gap-4 text-left">
+    <Form
+      action={formAction}
+      className="grid w-full gap-4 px-[5%] py-[5dvh] text-left"
+    >
       <Image
         src={travelHands}
         alt=""
         role="presentation"
         className="mx-auto w-1/2 md:w-1/3"
       />
-      <CommonTitle>Confirma tu presencia!</CommonTitle>
+      <CommonTitle>Asistencia</CommonTitle>
 
-      <fieldset className="grid gap-2">
+      <fieldset className="grid gap-2 italic">
         <label htmlFor="adults">Cantidad de adultos:</label>
         <input
           className="rounded-sm px-2 py-1 text-secondary"

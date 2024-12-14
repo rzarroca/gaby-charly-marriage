@@ -15,9 +15,7 @@ export const Countdown = () => (
       role="presentation"
       className="mx-auto w-1/2 md:w-1/3"
     />
-    <CommonTitle>
-      Cuenta regresiva para iniciar el embarque a nuestra nueva aventura
-    </CommonTitle>
+    <CommonTitle>Cuenta regresiva</CommonTitle>
     <Timer />
   </PageSection>
 );
