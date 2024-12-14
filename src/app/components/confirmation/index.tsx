@@ -11,17 +11,22 @@ import travelHands from "assets/travel-hands.png";
 // Components
 import { CommonTitle } from "components/commonTitle";
 import { SubmitButton } from "./submitButton";
+// Enumerations
+import { MESSAGE_STATUS_ENUMERATION } from "enumerations";
 
 export const Confirmation = () => {
-  const [state, formAction] = useActionState(SendEmailAction, "");
+  const [{ id, status }, formAction] = useActionState(SendEmailAction, {
+    status: MESSAGE_STATUS_ENUMERATION.SUCCESS,
+    id: "",
+  });
 
   useEffect(() => {
-    if (state === "success") {
+    if (status === MESSAGE_STATUS_ENUMERATION.SUCCESS) {
       toast.success("Asistencia Confirmada!");
-    } else if (state === "error") {
+    } else if (status === MESSAGE_STATUS_ENUMERATION.ERROR) {
       toast.error("Ha habido un error. Inténtalo otra vez");
     }
-  }, [state]);
+  }, [id, status]);
 
   return (
     <Form
@@ -83,14 +88,6 @@ export const Confirmation = () => {
       </fieldset>
 
       <SubmitButton />
-
-      {state && (
-        <p>
-          {state === "error"
-            ? "Ha habido un error. Inténtalo otra vez"
-            : "Asistencia Confirmada!"}
-        </p>
-      )}
     </Form>
   );
 };

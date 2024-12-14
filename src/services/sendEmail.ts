@@ -1,26 +1,46 @@
 import "server-only";
 // Vendors
-import { Resend } from "resend";
-// Components
-import { EmailTemplate } from "components/emailTemplate";
-// Types
-import { type SendEmailSchema } from "app/components/confirmation/actions";
+import formData from "form-data";
+import Mailgun from "mailgun.js";
+// Enumerations
+import { MESSAGE_STATUS_ENUMERATION } from "enumerations";
+// Models
+import { AsistanceModel } from "models/asistance";
+// Utils
+import { generateConfirmationHTML, generateConfirmationText } from "./utils";
 
-const { RESEND_API_KEY, EMAIL_ADDRESS } = process.env;
-const resend = new Resend(RESEND_API_KEY);
+const mailgun = new Mailgun(formData);
 
-export async function sendEmailService(emailData: SendEmailSchema) {
-  const { data, error } = await resend.emails.send({
-    from: "Asistencias Boda <asistencias@resend.dev>",
-    to: [EMAIL_ADDRESS!],
-    subject: "Nueva confirmación de asistencia a la Boda",
-    react: EmailTemplate(emailData),
-  });
+const {
+  MAILGUN_DOMAIN,
+  MAILGUN_API_KEY,
+  TO_EMAIL_ADDRESS_1,
+  TO_EMAIL_ADDRESS_2 = "",
+} = process.env;
 
-  if (error) {
-    console.log("Error sending email:", error);
-    throw new Error("Error sending email");
+const mg = mailgun.client({
+  username: "api",
+  key: MAILGUN_API_KEY!,
+});
+
+export async function sendEmailService(
+  emailData: AsistanceModel,
+): Promise<
+  (typeof MESSAGE_STATUS_ENUMERATION)[keyof typeof MESSAGE_STATUS_ENUMERATION]
+> {
+  try {
+    const response = await mg.messages.create(MAILGUN_DOMAIN!, {
+      from: "Confirmaciones <confirmaciones@casamiento.info>",
+      to: [TO_EMAIL_ADDRESS_1!, TO_EMAIL_ADDRESS_2],
+      subject: "Nueva asistencia confirmada!",
+      text: generateConfirmationText(emailData),
+      html: generateConfirmationHTML(emailData),
+    });
+
+    console.log("Email sent:", response);
+    return MESSAGE_STATUS_ENUMERATION.SUCCESS;
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return MESSAGE_STATUS_ENUMERATION.ERROR;
   }
-
-  console.log("Success sending email. Data received:", data);
 }

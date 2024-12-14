@@ -17,4 +17,4 @@ export const ROOM_LIST = [
     summary: "2 adultos",
     cost: 1900,
   },
-] satisfies DetailItemComponentProps[];
+] satisfies Omit<DetailItemComponentProps, "index">[];

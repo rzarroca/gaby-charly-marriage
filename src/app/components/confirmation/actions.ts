@@ -1,35 +1,36 @@
 "use server";
-// Vendors
-import { z } from "zod";
+// Enumerations
+import { MESSAGE_STATUS_ENUMERATION } from "enumerations";
 // Services
 import { sendEmailService } from "services/sendEmail";
+// Validations
+import { validateSendEmailAction } from "validations";
 
-const schema = z.object({
-  adults: z.number().min(1).max(10),
-  childrens: z.number().min(0).max(10),
-  names: z.string().min(1).max(255),
-  message: z.string().min(0).max(1000),
-});
+function createUid() {
+  return Math.random().toString(36).substring(2);
+}
 
-export type SendEmailSchema = z.infer<typeof schema>;
+export type SendEmailActionReturnType = {
+  status: (typeof MESSAGE_STATUS_ENUMERATION)[keyof typeof MESSAGE_STATUS_ENUMERATION];
+  id: string;
+};
 
-export async function SendEmailAction(prevState: string, formData: FormData) {
-  const { adults, childrens, names, message } = Object.fromEntries(formData);
-
-  const validatedFields = schema.safeParse({
-    adults: Number(adults),
-    childrens: Number(childrens),
-    names,
-    message,
-  });
-
+export async function SendEmailAction(
+  _: SendEmailActionReturnType,
+  formData: FormData,
+): Promise<SendEmailActionReturnType> {
   try {
-    if (!validatedFields.success) throw new Error("Validated field error");
-    await sendEmailService(validatedFields.data);
-    return "success";
+    const result = await sendEmailService(validateSendEmailAction(formData));
+    return {
+      status: result,
+      id: createUid(),
+    };
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
-    console.log(e);
-    return "error";
+    return {
+      status: MESSAGE_STATUS_ENUMERATION.ERROR,
+      id: createUid(),
+    };
   }
 }
