@@ -3,9 +3,12 @@ import Image from "next/image";
 // Assets
 import heartUrl from "assets/vectors/heart.svg?url";
 import horLoopUrl from "assets/vectors/horizontal-loop.svg?url";
+// Componets
+import { WorldImage } from "components/worldImage";
 
 export const Invitation = () => (
   <section className="relative grid h-dvh justify-items-center py-[10dvh]">
+    <WorldImage />
     <p className="flex flex-col px-[10dvw] font-curly text-5xl leading-snug">
       <span>Después de</span>
       <span>13 años juntos</span>

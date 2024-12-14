@@ -1,6 +1,11 @@
+// Components
+import { CardSection } from "components/cardSection";
+
 export const Footer = () => (
-  <footer className="">
-    <p>Te esperamos</p>
-    <p>Carlos y Gabriela</p>
+  <footer>
+    <CardSection>
+      <p>Te esperamos</p>
+      <p>Carlos y Gabriela</p>
+    </CardSection>
   </footer>
 );

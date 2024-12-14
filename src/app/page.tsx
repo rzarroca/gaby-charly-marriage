@@ -24,6 +24,12 @@ export default function Home() {
       <DressCode />
       <Footer />
       <Toaster />
+      {/* <audio autoPlay controls>
+        <source
+          src="https://utfs.io/f/TQN6ETpOQVaoKtlvVKyQCcvom2wXNxOhaI0DY3szHdfSFJVr"
+          type="audio/mp3"
+        />
+      </audio> */}
     </main>
   );
 }

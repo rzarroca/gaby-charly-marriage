@@ -5,9 +5,12 @@ import gift from "assets/vectors/gift.svg?url";
 // Components
 import { CommonTitle } from "components/commonTitle";
 import { ItalicParagraph } from "components/italicParagraph";
+import { WorldImage } from "components/worldImage";
+import { PageSection } from "components/pageSection";
 
 export const Gift = () => (
-  <section className="common-section grid gap-4">
+  <PageSection>
+    <WorldImage />
     <Image
       src={gift}
       alt=""
@@ -18,5 +21,5 @@ export const Gift = () => (
     <ItalicParagraph>
       El mejor regalo que puedes hacernos es tu presencia
     </ItalicParagraph>
-  </section>
+  </PageSection>
 );

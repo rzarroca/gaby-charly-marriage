@@ -6,11 +6,13 @@ import hotel from "assets/vectors/hotel.svg?url";
 import { CommonTitle } from "components/commonTitle";
 import { DetailItemComponent } from "./detail-item.component";
 import { PageSection } from "components/pageSection";
+import { WorldImage } from "components/worldImage";
 // Constants
 import { ROOM_LIST } from "./habitationList.constant";
 
 export const HotelInfo = () => (
   <PageSection className="text-left">
+    <WorldImage />
     <Image
       src={hotel}
       alt=""

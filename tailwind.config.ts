@@ -16,6 +16,15 @@ export default {
       fontFamily: {
         curly: ["var(--font-curly)"],
       },
+      animation: {
+        cross: "cross 20s linear infinite",
+      },
+      keyframes: {
+        cross: {
+          "0%": { transform: "translate(0)" },
+          "100%": { transform: "translate(-375px)" },
+        },
+      },
     },
   },
   plugins: [],

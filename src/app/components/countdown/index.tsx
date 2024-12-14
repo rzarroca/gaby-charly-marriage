@@ -5,9 +5,10 @@ import travelTicket from "assets/vectors/travel-ticket.svg?url";
 // Components
 import { CommonTitle } from "components/commonTitle";
 import { Timer } from "./timer";
+import { PageSection } from "components/pageSection";
 
 export const Countdown = () => (
-  <section className="common-section grid gap-4">
+  <PageSection>
     <Image
       src={travelTicket}
       alt=""
@@ -18,5 +19,5 @@ export const Countdown = () => (
       Cuenta regresiva para iniciar el embarque a nuestra nueva aventura
     </CommonTitle>
     <Timer />
-  </section>
+  </PageSection>
 );
