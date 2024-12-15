@@ -7,16 +7,18 @@ import stamp from "assets/mexico-stamp.png";
 import { CardSection } from "components/cardSection";
 
 export const WeddingInfo = () => (
-  <CardSection className="uppercase">
-    <Image
-      src={cygPhoto}
-      alt="Gabriela y Carlos esperándolos en México"
-      className="shadow-lg"
-    />
-    <h2 className="] mx-auto w-[95%] border-b-2 border-b-secondary py-[2dvh] text-xl text-tertiary md:text-3xl">
-      Pasaporte a nuestra boda
-    </h2>
-    <dl className="relative mx-auto w-[95%] border-b-2 border-b-secondary px-2 py-[2dvh] text-start">
+  <CardSection
+    {...{
+      image: {
+        src: cygPhoto,
+        alt: "Gabriela y Carlos esperándolos en México",
+      },
+      title: "Pasaporte a nuestra boda",
+      className: "uppercase",
+      footer: "Carlos & Gabriela",
+    }}
+  >
+    <dl className="relative mx-auto w-[95%] px-2 py-[2dvh] text-start">
       <Image
         src={stamp}
         role="presentation"
@@ -38,8 +40,5 @@ export const WeddingInfo = () => (
         Mucha buena onda y ganas de festejar
       </dd>
     </dl>
-    <p className="px-6 py-[2dvh] text-xl text-tertiary md:text-3xl">
-      Carlos & Gabriela
-    </p>
   </CardSection>
 );

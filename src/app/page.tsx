@@ -1,19 +1,21 @@
 // Vendors
 import { Toaster } from "react-hot-toast";
 // Components
+import { AudioPlayer } from "./components/audioPlayer";
 import { Confirmation } from "./components/confirmation";
 import { Countdown } from "./components/countdown";
 import { DressCode } from "./components/dressCode";
+import { Footer } from "./components/footer";
 import { Gift } from "./components/gitf";
+import { Header } from "./components/header";
 import { HotelInfo } from "./components/hotelInfo";
 import { Invitation } from "./components/invitation";
-import { Header } from "./components/header";
 import { WeddingInfo } from "./components/weddingInfo";
-import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
     <main className="w-dvw max-w-3xl overflow-clip bg-secondary text-center">
+      <AudioPlayer />
       <Header />
       <Invitation />
       <WeddingInfo />
@@ -24,12 +26,6 @@ export default function Home() {
       <DressCode />
       <Footer />
       <Toaster />
-      {/* <audio autoPlay controls>
-        <source
-          src="https://utfs.io/f/TQN6ETpOQVaoKtlvVKyQCcvom2wXNxOhaI0DY3szHdfSFJVr"
-          type="audio/mp3"
-        />
-      </audio> */}
     </main>
   );
 }
