@@ -37,15 +37,11 @@ export const HotelInfo = () => (
         Precios Habitaciones <br /> (7 noches, 8 días):
       </h3>
 
-      <ul className="grid gap-3 italic md:grid-cols-2">
+      <dl className="grid gap-3 italic md:grid-cols-2">
         {ROOM_LIST.map((roomProps, index) => (
           <DetailItemComponent key={index} {...{ ...roomProps, index }} />
         ))}
-      </ul>
-
-      <small className="text-justify text-sm italic">
-        Texto para el precio all inclusive (rellenar)
-      </small>
+      </dl>
 
       <small className="text-justify text-sm italic">
         Los aéreos los sacaremos en cuanto se habilite la fecha de noviembre,

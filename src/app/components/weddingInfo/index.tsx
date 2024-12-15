@@ -1,7 +1,7 @@
 // Vendors
 import Image from "next/image";
 // Assets
-import cygPhoto from "assets/photogyc.jpeg";
+import cygPhoto from "assets/photogyc.webp";
 import stamp from "assets/mexico-stamp.png";
 // Components
 import { CardSection } from "components/cardSection";
@@ -18,7 +18,7 @@ export const WeddingInfo = () => (
       footer: "Carlos & Gabriela",
     }}
   >
-    <dl className="relative mx-auto w-[95%] px-2 py-[2dvh] text-start">
+    <dl className="relative mx-auto w-[95%] px-2 py-[2svh] text-start">
       <Image
         src={stamp}
         role="presentation"

@@ -31,7 +31,7 @@ export const Confirmation = () => {
   return (
     <Form
       action={formAction}
-      className="grid w-full gap-4 px-[5%] py-[5dvh] text-left"
+      className="grid w-full gap-4 px-[5%] py-[5svh] text-left"
     >
       <Image
         src={travelHands}

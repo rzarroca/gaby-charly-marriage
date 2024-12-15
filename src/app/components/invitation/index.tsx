@@ -7,7 +7,7 @@ import horLoopUrl from "assets/vectors/horizontal-loop.svg?url";
 import { WorldImage } from "components/worldImage";
 
 export const Invitation = () => (
-  <section className="relative grid h-dvh justify-items-center py-[3dvh]">
+  <section className="relative grid h-svh justify-items-center py-[3svh]">
     <WorldImage />
     <p className="flex flex-col px-[10dvw] font-curly text-5xl leading-snug">
       <span>Después de</span>
@@ -27,7 +27,7 @@ export const Invitation = () => (
       src={heartUrl}
       alt=""
       role="presentation"
-      className="absolute bottom-[5dvh] left-[10dvw] h-12 w-12 sm:h-20 sm:w-20"
+      className="absolute bottom-[5svh] left-[10dvw] h-12 w-12 sm:h-20 sm:w-20"
     />
   </section>
 );

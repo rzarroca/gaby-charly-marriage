@@ -1,3 +1,5 @@
+// Assets
+import losCuatro from "assets/loscuatro.webp";
 // Components
 import { CardSection } from "components/cardSection";
 import { SongSection } from "./SongSection";
@@ -10,6 +12,10 @@ export const Footer = () => (
       as: "footer",
       title: "Te esperamos",
       footer: "Carlos y Gabriela",
+      image: {
+        src: losCuatro,
+        alt: "",
+      },
     }}
   >
     <article className="grid gap-2 py-4 text-center text-secondary">

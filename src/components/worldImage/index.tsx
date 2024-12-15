@@ -11,16 +11,17 @@ export const WorldImage = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     aria-disabled="true"
-    className={cn("absolute mt-[8dvh] w-[100vw] overflow-clip", className)}
+    className={cn("absolute mt-[8svh] w-[100vw] overflow-clip", className)}
     {...props}
   >
-    <div className="animate-cross flex">
+    <div className="flex animate-cross">
       <Image
         src={world}
         alt=""
         aria-hidden
         role="presentation"
         className="h-auto w-[375px]"
+        priority={true}
       />
       <Image
         src={world}
@@ -28,6 +29,7 @@ export const WorldImage = ({
         aria-hidden
         role="presentation"
         className="h-auto w-[375px]"
+        priority={true}
       />
       <Image
         src={world}
@@ -35,6 +37,7 @@ export const WorldImage = ({
         aria-hidden
         role="presentation"
         className="h-auto w-[375px]"
+        priority={true}
       />
     </div>
   </div>

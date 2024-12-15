@@ -11,7 +11,7 @@ const curlyFont = Oooh_Baby({
 });
 
 export const metadata: Metadata = {
-  title: "Nos Casamos - Gaby & Charly",
+  title: "Nos Casamos - Gabriela y Carlos",
   description: "Página de invitación al casamiento de Gabriela y Carlos",
 };
 

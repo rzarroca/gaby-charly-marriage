@@ -19,8 +19,8 @@ export function AudioPlayer() {
   };
 
   return (
-    <div className="sticky top-[12dvh] z-10 mr-2 grid sm:mr-4">
-      <audio ref={audioRef} autoPlay loop className="hidden">
+    <div className="sticky top-[12svh] z-10 mr-2 grid sm:mr-4">
+      <audio ref={audioRef} loop className="hidden" preload="none">
         <source
           src="https://utfs.io/f/TQN6ETpOQVaoKtlvVKyQCcvom2wXNxOhaI0DY3szHdfSFJVr"
           type="audio/mp3"

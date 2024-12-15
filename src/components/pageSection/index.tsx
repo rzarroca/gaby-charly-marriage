@@ -1,7 +1,7 @@
 // Utils
 import { cn } from "lib";
 
-const PAGE_SECTION_STYLE = "grid gap-8 px-[5%] py-[5dvh] relative";
+const PAGE_SECTION_STYLE = "grid gap-8 px-[5%] py-[5svh] relative";
 
 export const PageSection = ({
   className,

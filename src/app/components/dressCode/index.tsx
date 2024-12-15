@@ -20,13 +20,13 @@ export const DressCode = () => (
       src={glasses}
       alt=""
       role="presentation"
-      className="absolute left-4 mx-auto w-1/5 translate-y-[15dvh] md:left-12 md:w-1/6"
+      className="absolute left-4 mx-auto w-1/5 translate-y-[15svh] md:left-12 md:w-1/6"
     />
     <Image
       src={hat}
       alt=""
       role="presentation"
-      className="absolute right-4 mx-auto w-1/5 translate-y-[20dvh] md:right-12 md:w-1/6"
+      className="absolute right-4 mx-auto w-1/5 translate-y-[20svh] md:right-12 md:w-1/6"
     />
   </PageSection>
 );
