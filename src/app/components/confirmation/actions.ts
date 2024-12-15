@@ -3,12 +3,10 @@
 import { MESSAGE_STATUS_ENUMERATION } from "enumerations";
 // Services
 import { sendEmailService } from "services/sendEmail";
+// Utils
+import { createUid } from "lib";
 // Validations
 import { validateSendEmailAction } from "validations";
-
-function createUid() {
-  return Math.random().toString(36).substring(2);
-}
 
 export type SendEmailActionReturnType = {
   status: (typeof MESSAGE_STATUS_ENUMERATION)[keyof typeof MESSAGE_STATUS_ENUMERATION];
